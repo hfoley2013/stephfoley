@@ -2,13 +2,13 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useSidebar } from '@/hooks/useSidebar'
+import { useToggleSidebar } from '@/hooks/useToggleSidebar'
 
 type Props = {}
 
 function NavBar({ }: Props) {
 
-  const { isSideBarOpen, toggleSideBar } = useSidebar();
+  const { isSideBarOpen, toggleSideBar } = useToggleSidebar();
 
 
   return (
