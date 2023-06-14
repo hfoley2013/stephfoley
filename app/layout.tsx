@@ -6,9 +6,32 @@ import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
+  metadataBase: new URL('https://stephfoley.com'),
   title: 'Steph Foley | Leader in Tech',
   description: 'Stephiney Foley is a Technical Product Manager helping entrepreneurs build their business online.',
-  image: '/steph_headshot.png'
+  image: '/steph_headshot.png',
+  openGraph: {
+    title: 'Steph Foley | Leader in Tech',
+    description: 'Stephiney Foley is a Technical Product Manager helping entrepreneurs build their business online.',
+    url: 'https://stephfoley.com',
+    siteName: 'Next.js',
+    images: [
+      {
+        url: '/steph_headshot.png',
+        width: 800,
+        height: 600,
+        alt: 'Stephiney Foley is a Technical Product Manager helping entrepreneurs build their business online.',
+      },
+      {
+        url: '/steph_headshot.png',
+        width: 1800,
+        height: 1600,
+        alt: 'Stephiney Foley is a Technical Product Manager helping entrepreneurs build their business online.',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({
