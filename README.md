@@ -1,3 +1,5 @@
+# About
+
 The personal website for tech thought leader Stephiney Foley.
 
 Built using the following technologies:
