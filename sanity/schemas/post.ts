@@ -1,14 +1,20 @@
-import {defineField, defineType} from 'sanity'
+import { BookIcon } from '@sanity/icons'
+import { format, parseISO } from 'date-fns'
+import { defineField, defineType } from 'sanity'
+
+import authorType from './author'
 
 export default defineType({
   name: 'post',
   title: 'Post',
+  icon: BookIcon,
   type: 'document',
   fields: [
     defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'slug',
@@ -17,56 +23,75 @@ export default defineType({
       options: {
         source: 'title',
         maxLength: 96,
+        isUnique: (value, context) => context.defaultIsUnique(value, context),
       },
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'content',
+      title: 'Content',
+      type: 'array',
+      of: [
+        { 
+          type: 'block',
+          marks: {
+            decorators: [
+              {title: 'Strong', value: 'strong'}, 
+              {title: 'Emphasis', value: 'em'},
+              {title: "Code", value: "code" },
+              {title: "Underline", value: "underline" },
+              {title: "Strike", value: "strike-through" }
+            ]
+          }
+        },
+        {
+          type: 'image'
+        },
+        {
+          type: 'code'
+        }
+      ],
+    }),
+    defineField({
+      name: 'excerpt',
+      title: 'Excerpt',
+      type: 'text',
+    }),
+    defineField({
+      name: 'coverImage',
+      title: 'Cover Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'date',
+      title: 'Date',
+      type: 'datetime',
+      initialValue: () => new Date().toISOString(),
     }),
     defineField({
       name: 'author',
       title: 'Author',
       type: 'reference',
-      to: {type: 'author'},
-    }),
-    defineField({
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        {
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative Text',
-        }
-      ]
-    }),
-    defineField({
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
-    }),
-    defineField({
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
-    }),
-    defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
+      to: [{ type: authorType.name }],
     }),
   ],
-
   preview: {
     select: {
       title: 'title',
       author: 'author.name',
-      media: 'mainImage',
+      date: 'date',
+      media: 'coverImage',
     },
-    prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
+    prepare({ title, media, author, date }) {
+      const subtitles = [
+        author && `by ${author}`,
+        date && `on ${format(parseISO(date), 'LLL d, yyyy')}`,
+      ].filter(Boolean)
+
+      return { title, media, subtitle: subtitles.join(' ') }
     },
   },
 })

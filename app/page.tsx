@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
 import Loading from './loading'
-import Hero from '@/components/Hero'
-import LandingInsights from '@/components/LandingInsights'
-import NewsLetterSignUp from '@/components/NewsLetterSignUp'
+import Hero from '@/components/general/Hero'
+import LandingInsights from '@/components/general/LandingInsights'
+import NewsLetterSignUp from '@/components/general/NewsLetterSignUp'
 
 export default function Home() {
   return (

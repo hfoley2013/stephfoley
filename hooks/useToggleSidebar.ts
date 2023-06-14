@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react';
 
-export function useSidebar() {
+export function useToggleSidebar() {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
 
   useEffect(() => {
