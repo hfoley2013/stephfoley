@@ -22,7 +22,7 @@ function About({ }: Props) {
                 I Ignite Growth for Individuals and Teams through Leadership and Innovation
               </h2>
               <p className="text-gray-500">
-                Welcome to my personal website! I&pos;m an experienced leader with expertise in people management, data analysis, experimentation, market/customer insights, business development, growth, go-to-market strategy, and product/program management. I&pos;m passionate about building inclusive and high-performing teams that drive growth through user insights, data, storytelling, and creative problem-solving.
+                Welcome to my personal website! I&apos;m an experienced leader with expertise in people management, data analysis, experimentation, market/customer insights, business development, growth, go-to-market strategy, and product/program management. I&apos;m passionate about building inclusive and high-performing teams that drive growth through user insights, data, storytelling, and creative problem-solving.
               </p>
               <p className="text-gray-500">
                 I have a unique background as a female immigrant from China who served in the U.S. Army for 10 years after graduating from the United States Military Academy. Witnessing the events of 9/11 in my hometown of Brooklyn inspired me to join the Army, where I deployed to Afghanistan as a transportation and logistics officer.
@@ -31,10 +31,10 @@ function About({ }: Props) {
                 Following my deployment, I pursued my education at the Tuck School of Business at Dartmouth while my husband, a Navy Special Operations officer, underwent advanced training and deployments. We eventually settled in Seattle, where I began working at Amazon as a Product Manager and later became a Technical Product Manager.
               </p>
               <p className="text-gray-500">
-                Balancing a successful career, entrepreneurship aspirations, and a growing family with two young boys, I&pos;ve learned the importance of prioritization and self-care. I embrace personal growth and constantly seek new avenues for development.
+                Balancing a successful career, entrepreneurship aspirations, and a growing family with two young boys, I&apos;ve learned the importance of prioritization and self-care. I embrace personal growth and constantly seek new avenues for development.
               </p>
               <p className="text-gray-500">
-                Thank you for visiting my website. Let&pos;s connect and explore exciting opportunities together, fueled by innovation, inclusivity, and a relentless pursuit of excellence.
+                Thank you for visiting my website. Let&apos;s connect and explore exciting opportunities together, fueled by innovation, inclusivity, and a relentless pursuit of excellence.
               </p>
             </div>
           </div>

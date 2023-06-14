@@ -27,29 +27,29 @@ function Contact({ }: Props) {
                 <div className="grid gap-4">
 
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    <div>
+                    <div className="border border-gray-400 rounded-md">
                       <label htmlFor="hs-firstname-contacts-1" className="sr-only">First Name</label>
                       <input type="text" name="hs-firstname-contacts-1" id="hs-firstname-contacts-1" className="block w-full px-4 py-3 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="First Name" />
                     </div>
 
-                    <div>
+                    <div className="border border-gray-400 rounded-md">
                       <label htmlFor="hs-lastname-contacts-1" className="sr-only">Last Name</label>
                       <input type="text" name="hs-lastname-contacts-1" id="hs-lastname-contacts-1" className="block w-full px-4 py-3 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Last Name" />
                     </div>
                   </div>
 
 
-                  <div>
+                  <div className="border border-gray-400 rounded-md">
                     <label htmlFor="hs-email-contacts-1" className="sr-only">Email</label>
                     <input type="email" name="hs-email-contacts-1" id="hs-email-contacts-1" className="block w-full px-4 py-3 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Email" />
                   </div>
 
-                  <div>
+                  <div className="border border-gray-400 rounded-md">
                     <label htmlFor="hs-phone-number-1" className="sr-only">Phone Number</label>
                     <input type="text" name="hs-phone-number-1" id="hs-phone-number-1" className="block w-full px-4 py-3 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Phone Number" />
                   </div>
 
-                  <div>
+                  <div className="border border-gray-400 rounded-md">
                     <label htmlFor="hs-about-contacts-1" className="sr-only">Details</label>
                     <textarea id="hs-about-contacts-1" name="hs-about-contacts-1" rows={4} className="block w-full px-4 py-3 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Details"></textarea>
                   </div>

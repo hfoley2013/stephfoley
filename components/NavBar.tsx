@@ -17,7 +17,7 @@ function NavBar({ }: Props) {
         <div className="flex items-center justify-between">
           <Link className="inline-flex items-center text-xl font-semibold gap-x-2 dark:text-white" onClick={toggleSideBar} href="/">
             <div className="relative w-10 h-auto">
-              <Image src="/logo.png" alt="Chinese calligraphy of Xie, Thank You." width={80} height={80}/>
+              <Image src="/logo_negative.png" alt="Chinese calligraphy of Xie, Thank You." width={80} height={80} className="rounded-md"/>
             </div>
           </Link>
           <div className="sm:hidden">
