@@ -16,7 +16,7 @@ function Hero({ }: Props) {
 
 
           <div className="relative mt-3 sm:hidden">
-            <Image className="w-full rounded-md" src="/steph_headshot.jpeg" alt="A headshot of Stephiney Foley, a Technical Product Manager, Tech Though Leader, Mother, and Entreprenuer." width={200} height={200} />
+            <Image className="w-full rounded-md" src="/steph_headshot.png" alt="A headshot of Stephiney Foley, a Technical Product Manager, Tech Though Leader, Mother, and Entreprenuer." width={200} height={200} />
           </div>
 
           <div className="grid w-full gap-3 mt-3 sm:inline-flex">
@@ -35,7 +35,7 @@ function Hero({ }: Props) {
 
 
         <div className="relative hidden ml-4 sm:flex">
-          <Image className="w-full rounded-md" src="/steph_headshot.jpeg" alt="A headshot of Stephiney Foley, a Technical Product Manager, Tech Though Leader, Mother, and Entreprenuer." width={200} height={200} />
+          <Image className="w-full rounded-md" src="/steph_headshot.png" alt="A headshot of Stephiney Foley, a Technical Product Manager, Tech Though Leader, Mother, and Entreprenuer." width={200} height={200} />
         </div>
 
       </div>
