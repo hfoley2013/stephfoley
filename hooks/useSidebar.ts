@@ -8,7 +8,7 @@ export function useSidebar() {
     if (isSideBarOpen) {
       setIsSideBarOpen(false);
     }
-  }, [isSideBarOpen]);
+  }, []);
 
   const toggleSideBar = () => {
     setIsSideBarOpen((prevState) => !prevState);
