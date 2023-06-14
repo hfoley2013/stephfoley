@@ -17,9 +17,8 @@ function NavBar({ }: Props) {
         <div className="flex items-center justify-between">
           <Link className="inline-flex items-center text-xl font-semibold gap-x-2 dark:text-white" onClick={toggleSideBar} href="/">
             <div className="relative w-10 h-auto">
-              <Image src="/xie_char.png" alt="Chinese calligraphy of Xie, Thank You." width={40} height={40}/>
+              <Image src="/logo.png" alt="Chinese calligraphy of Xie, Thank You." width={80} height={80}/>
             </div>
-            Steph Foley
           </Link>
           <div className="sm:hidden">
             <button type="button" onClick={toggleSideBar} className="inline-flex items-center justify-center gap-2 p-2 text-sm font-medium text-gray-700 align-middle transition-all bg-white border rounded-md shadow-sm hs-collapse-toggle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800" data-hs-collapse="#navbar-image-and-text-1" aria-controls="navbar-image-and-text-1" aria-label="Toggle navigation">
