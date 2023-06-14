@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero'
-import Footer from '@/components/Footer'
+import LandingInsights from '@/components/LandingInsights'
+import NewsLetterSignUp from '@/components/NewsLetterSignUp'
 
 export default function Home() {
   return (
@@ -7,7 +8,9 @@ export default function Home() {
         
       <Hero />      
       
-      <Footer />
+      <LandingInsights />
+
+      <NewsLetterSignUp />
 
     </main>
   )
