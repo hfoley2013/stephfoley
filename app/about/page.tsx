@@ -10,7 +10,7 @@ function About({ }: Props) {
 
       <div className="md:grid md:grid-cols-2 md:items-center md:gap-12 xl:gap-32">
         <div>
-          <Image className="w-full rounded-md" src="/steph_headshot.png" alt="A headshot of Stephiney Foley, a Technical Product Manager, Tech Though Leader, Mother, and Entreprenuer." width={200} height={200} />
+          <Image className="w-full rounded-md" src="/steph_headshot.png" alt="A headshot of Stephiney Foley, a Technical Product Manager, Tech Though Leader, Mother, and Entreprenuer." width={200} height={200} priority />
         </div>
 
 
