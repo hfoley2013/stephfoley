@@ -1,8 +1,31 @@
+'use client'
 import React from 'react'
+import { useForm, SubmitHandler } from "react-hook-form"
 
 type Props = {}
 
 function Contact({ }: Props) {
+  
+  type Inputs = {
+    firstName: string,
+    lastName: string,
+    email: string,
+    phoneNumber: string,
+    details: string,
+  }
+  
+  const { 
+    register, 
+    handleSubmit, 
+  } = useForm<Inputs>()
+  
+  const onSubmit: SubmitHandler<Inputs> = (formData) => {
+    const subject = encodeURIComponent(`${formData.firstName} ${formData.lastName}`);
+    const body = encodeURIComponent(formData.details);
+    const emailLink = `mailto:${process.env.NEXT_PUBLIC_EMAIL}?subject=${subject}&body=${body}`;
+    window.location.href = emailLink;
+  }
+  
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-24">
       <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
@@ -23,35 +46,35 @@ function Contact({ }: Props) {
                 Fill in the form
               </h2>
 
-              <form>
+              <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="grid gap-4">
 
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <div className="border border-gray-400 rounded-md">
                       <label htmlFor="hs-firstname-contacts-1" className="sr-only">First Name</label>
-                      <input type="text" name="hs-firstname-contacts-1" id="hs-firstname-contacts-1" className="block w-full px-4 py-3 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="First Name" />
+                      <input {...register("firstName")}type="text" name="hs-firstname-contacts-1" id="hs-firstname-contacts-1" className="block w-full px-4 py-3 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="First Name" />
                     </div>
 
                     <div className="border border-gray-400 rounded-md">
                       <label htmlFor="hs-lastname-contacts-1" className="sr-only">Last Name</label>
-                      <input type="text" name="hs-lastname-contacts-1" id="hs-lastname-contacts-1" className="block w-full px-4 py-3 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Last Name" />
+                      <input {...register("lastName")} type="text" name="hs-lastname-contacts-1" id="hs-lastname-contacts-1" className="block w-full px-4 py-3 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Last Name" />
                     </div>
                   </div>
 
 
                   <div className="border border-gray-400 rounded-md">
                     <label htmlFor="hs-email-contacts-1" className="sr-only">Email</label>
-                    <input type="email" name="hs-email-contacts-1" id="hs-email-contacts-1" className="block w-full px-4 py-3 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Email" />
+                    <input {...register("email")} type="email" name="hs-email-contacts-1" id="hs-email-contacts-1" className="block w-full px-4 py-3 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Email" />
                   </div>
 
                   <div className="border border-gray-400 rounded-md">
                     <label htmlFor="hs-phone-number-1" className="sr-only">Phone Number</label>
-                    <input type="text" name="hs-phone-number-1" id="hs-phone-number-1" className="block w-full px-4 py-3 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Phone Number" />
+                    <input {...register("phoneNumber")} type="text" name="hs-phone-number-1" id="hs-phone-number-1" className="block w-full px-4 py-3 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Phone Number" />
                   </div>
 
                   <div className="border border-gray-400 rounded-md">
                     <label htmlFor="hs-about-contacts-1" className="sr-only">Details</label>
-                    <textarea id="hs-about-contacts-1" name="hs-about-contacts-1" rows={4} className="block w-full px-4 py-3 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Details"></textarea>
+                    <textarea {...register("details")} id="hs-about-contacts-1" name="hs-about-contacts-1" rows={4} className="block w-full px-4 py-3 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Details"></textarea>
                   </div>
                 </div>
 
