@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { useForm, SubmitHandler } from "react-hook-form"
+import { form } from 'sanity/desk'
 
 type Props = {}
 
@@ -20,8 +21,9 @@ function Contact({ }: Props) {
   } = useForm<Inputs>()
   
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
-    const subject = encodeURIComponent(`${formData.firstName} ${formData.lastName}`);
-    const body = encodeURIComponent(formData.details);
+    const senderEmail = formData.email
+    const subject = `${formData.firstName} ${formData.lastName}`
+    const body = `${formData.details} (${senderEmail})`
     const emailLink = `mailto:${process.env.NEXT_PUBLIC_EMAIL}?subject=${subject}&body=${body}`;
     window.location.href = emailLink;
   }
