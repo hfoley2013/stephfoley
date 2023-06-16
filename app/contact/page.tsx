@@ -29,7 +29,7 @@ function Contact({ }: Props) {
   }
   
   return (
-    <main className="flex flex-col items-center justify-between min-h-screen p-24">
+    <main className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
       <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
         <div className="max-w-2xl mx-auto lg:max-w-5xl">
           <div className="text-center">
@@ -37,7 +37,7 @@ function Contact({ }: Props) {
               Contact Me
             </h1>
             <p className="mt-1 text-gray-600 dark:text-gray-400">
-              I&apos;d love to talk about I we can help you.
+              I&apos;d love to talk about I can help you.
             </p>
           </div>
 

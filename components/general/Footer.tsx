@@ -7,11 +7,11 @@ type Props = {}
 function Footer({ }: Props) {
   return (
     <footer className="py-3 mt-auto">
-      <div className="max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
+      <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
 
-        <div className="grid items-center grid-cols-1 gap-5 text-center md:grid-cols-3">
-          <div>
-            <Link className="flex-none text-xl font-semibold text-black dark:text-white" href="/" aria-label="Brand">
+        <div className="grid items-center grid-cols-1 gap-5 text-center md:flex md:justify-between">
+          <div className="mx-auto sm:mx-0">
+            <Link className="flex-none text-xl font-semibold text-black center dark:text-white" href="/" aria-label="Brand">
               <Image src="/logo_negative.png" alt="Chinese calligraphy of Xie, Thank You." width={40} height={40} className="rounded-md"/>
             </Link>
           </div>
