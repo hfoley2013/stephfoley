@@ -51,7 +51,7 @@ export default async function Post({ params }: Props) {
   }
 
   return (
-    <div className="max-w-3xl px-4 pt-6 pb-12 mx-auto lg:pt-10 sm:px-6 lg:px-8">
+    <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
       <PostHeader 
         title={post.title}
         coverImage={post.coverImage}
