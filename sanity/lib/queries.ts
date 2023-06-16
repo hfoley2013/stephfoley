@@ -5,25 +5,26 @@ const postFields = groq`
   title,
   date,
   excerpt,
+  content,
   coverImage,
   "slug": slug.current,
-  "author": author->{name, picture},
+  "author": author->{name, image},
 `
 
 export const settingsQuery = groq`*[_type == "settings"][0]`
 
-export const indexQuery = groq`
+export const allPosts = groq`
 *[_type == "post"] | order(date desc, _updatedAt desc) {
   ${postFields}
 }`
 
-export const postAndMoreStoriesQuery = groq`
+export const featuredPostsAndAllPostsQuery = groq`
 {
-  "post": *[_type == "post" && slug.current == $slug] | order(_updatedAt desc) [0] {
+  "featuredPosts": *[_type == "post"] | order(_updatedAt desc) [0..2] {
     content,
     ${postFields}
   },
-  "morePosts": *[_type == "post" && slug.current != $slug] | order(date desc, _updatedAt desc) [0...2] {
+  "allPosts": *[_type == "post"] | order(date desc, _updatedAt desc) {
     content,
     ${postFields}
   }
@@ -38,27 +39,3 @@ export const postBySlugQuery = groq`
   ${postFields}
 }
 `
-
-export interface Author {
-  name?: string
-  picture?: any
-}
-
-export interface Post {
-  _id: string
-  title?: string
-  coverImage?: any
-  date?: string
-  excerpt?: string
-  author?: Author
-  slug?: string
-  content?: any
-}
-
-export interface Settings {
-  title?: string
-  description?: any[]
-  ogImage?: {
-    title?: string
-  }
-}
