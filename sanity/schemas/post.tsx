@@ -4,6 +4,16 @@ import { defineField, defineType } from 'sanity'
 
 import authorType from './author'
 
+const HighlightIcon = () => (
+  <span className='font-bold'>H</span>
+)
+
+type HighlightDecoratorProps = Record<string, any>
+
+const HighlightDecorator = (props: HighlightDecoratorProps) => (
+  <span className='bg-yellow-300'>{props.children}</span>
+)
+
 export default defineType({
   name: 'post',
   title: 'Post',
@@ -38,18 +48,30 @@ export default defineType({
             decorators: [
               {title: 'Strong', value: 'strong'}, 
               {title: 'Emphasis', value: 'em'},
-              {title: "Code", value: "code" },
               {title: "Underline", value: "underline" },
-              {title: "Strike", value: "strike-through" }
+              {title: "Strike", value: "strike-through" },
+              { 
+                title: 'Highlight',
+                value: 'highlight',
+                icon: HighlightIcon,
+                component: HighlightDecorator,
+              }
             ]
           }
         },
         {
-          type: 'image'
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: 'alt',
+              type: 'string',
+              title: 'Alternative Text'
+            }
+          ]
         },
-        {
-          type: 'code'
-        }
       ],
     }),
     defineField({
