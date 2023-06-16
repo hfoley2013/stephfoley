@@ -1,5 +1,6 @@
 import { PortableText } from '@portabletext/react'
 import { PortableTextComponents } from '@portabletext/react'
+import { PostImage } from '@/components/blog/PostImage'
 import PostHeader from '@/components/blog/PostHeader'
 import Link from 'next/link'
 import React from 'react'
@@ -14,6 +15,9 @@ export default async function Post({ params }: Props) {
   const post = await fetchPost(slug)
 
   const components: PortableTextComponents = {
+    types: {
+      image: PostImage,
+    },
     block: {
       h2: ({children}) => <h2 className="text-lg font-bold md:text-xl dark:text-white">{children}</h2>,
       h3: ({children}) => <h3 className="font-bold text-md md:text-lg dark:text-white">{children}</h3>,
