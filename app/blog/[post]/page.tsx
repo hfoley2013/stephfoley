@@ -32,6 +32,7 @@ export default async function Post({ params }: Props) {
       },
     },
     marks: {
+      highlight: ({children}) => <em className="bg-yellow-300">{children}</em>,
       em: ({children}) => <em className="italic font-semibold">{children}</em>,
       strong: ({children}) => <strong className="font-bold">{children}</strong>,
       link: ({value, children}) => {
