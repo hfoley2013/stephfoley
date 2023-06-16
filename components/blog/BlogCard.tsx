@@ -16,7 +16,7 @@ function BlogCard({post}: Props) {
         <Image 
           className="absolute top-0 left-0 object-cover w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-105 rounded-xl" 
           src={urlForImage(post?.coverImage.asset).url()} 
-          alt={post?.title}
+          alt=""
           fill
         />
       </div>
