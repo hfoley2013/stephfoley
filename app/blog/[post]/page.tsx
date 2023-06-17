@@ -10,6 +10,34 @@ type Props = {
   params: { post: string }
 }
 
+export async function generateMetadata({ params }: Props) {
+  const slug = params.post
+  const post = await fetchPost(slug)
+
+  try{
+    if (!post) {
+      return {
+        title: "Not Found",
+        description: "The page you are looking for does not exist.",        
+      }
+    }
+    return {
+      title: post.title,
+      description: post.excerpt,
+      alternate: {
+        canonical: `/blog/${post.slug}`
+      }
+    }
+  } catch(error) {
+    console.log(error)
+    return {
+      title: "Not Found",
+      description: "The page you are looking for does not exist.",
+    }
+  }
+  
+}
+
 export default async function Post({ params }: Props) {
   const slug = params.post
   const post = await fetchPost(slug)
