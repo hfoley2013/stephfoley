@@ -8,7 +8,7 @@ import fetchPost from '@/utils/fetchPost'
 import { urlForImage } from '@/sanity/lib/image'
 
 // Image metadata
-export const size = {
+const size = {
   width: 1200,
   height: 630,
 }
