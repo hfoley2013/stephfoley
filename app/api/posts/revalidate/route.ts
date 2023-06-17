@@ -15,5 +15,5 @@ export default async function revalidateBlogPosts(req: NextApiRequest, res: Next
   // Revalidate the specified path
   revalidatePath(path)
 
-  res.status(200).json({ revalidated: true, now: Date.now() })
+  return res.status(200).json({ revalidated: true, now: Date.now() })
 }
