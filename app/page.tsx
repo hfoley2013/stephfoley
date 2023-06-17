@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import Loading from './loading'
 import Hero from '@/components/general/Hero'
-import LandingInsights from '@/components/general/LandingInsights'
+import FeaturedPosts from '@/components/general/FeaturedPosts'
 import NewsLetterSignUp from '@/components/general/NewsLetterSignUp'
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
         <Hero />      
       </Suspense>
       
-      <LandingInsights />
+      <FeaturedPosts />
 
       <NewsLetterSignUp />
 

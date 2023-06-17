@@ -7,6 +7,12 @@ import React from 'react'
 import fetchPost from '@/utils/fetchPost'
 import { urlForImage } from '@/sanity/lib/image'
 
+// Image metadata
+export const size = {
+  width: 1200,
+  height: 630,
+}
+
 type Props = {
   params: { post: string }
 }
@@ -33,14 +39,28 @@ export async function generateMetadata({ params }: Props) {
         title: post.title,
         description: post.excerpt,
         creator: ['Stephiney Foley', 'Steph Foley'],
-        images: urlForImage(post.coverImage).url(),
+        images: [
+          {
+            url: urlForImage(post.coverImage!).url(),
+            width: size.width!,
+            height: size.height!,
+            alt: post.title,
+          }
+        ],
         url: `https://wwww.stephfoley.com/blog/${post.slug}`,
       },
       openGraph: {
         title: post.title,
         description: post.excerpt,
         url: `https://wwww.stephfoley.com/blog/${post.slug}`,
-        images: [urlForImage(post.coverImage).url()],
+        images: [
+          {
+            url: urlForImage(post.coverImage!).url(),
+            width: size.width!,
+            height: size.height!,
+            alt: post.title!,
+          }
+        ],
       },
     }
   } catch (error) {

@@ -21,7 +21,7 @@ export const contentType = 'image/png'
 export default async function ogImage({ params }: Props) {
   const slug = params.post
   const post = await fetchPost(slug)
-  console.log(post.coverImage)
+
   return new ImageResponse(
     (
       <div tw="flex items-center justify-center w-full h-full">

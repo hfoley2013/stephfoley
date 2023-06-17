@@ -2,6 +2,9 @@ import React from 'react'
 import BlogCard from '@/components/blog/BlogCard'
 import { fetchPosts } from '@/utils/fetchPosts'
 
+export const metadata = {
+  title: "Blog"
+}
 
 export default async function Blog() {
   const posts = await fetchPosts()

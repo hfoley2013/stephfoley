@@ -2,7 +2,7 @@ import React from 'react'
 
 type Props = {}
 
-function Loading({ }: Props) {
+export default function Loading({ }: Props) {
   return (
     <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 animate-pulse">
       <div className="grid gap-4 md:grid-cols-2 md:gap-8 xl:gap-20 md:items-center">
@@ -26,5 +26,3 @@ function Loading({ }: Props) {
     </div>
   )
 }
-
-export default Loading

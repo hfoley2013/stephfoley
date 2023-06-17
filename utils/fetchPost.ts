@@ -1,4 +1,3 @@
-import React from 'react'
 import { Post } from '@/sanity/interfaces/Post'
 import { client } from '@/sanity/lib/client'
 import { postBySlugQuery } from '@/sanity/lib/queries'

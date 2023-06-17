@@ -18,16 +18,9 @@ export const allPosts = groq`
   ${postFields}
 }`
 
-export const featuredPostsAndAllPostsQuery = groq`
-{
-  "featuredPosts": *[_type == "post"] | order(_updatedAt desc) [0..2] {
-    content,
-    ${postFields}
-  },
-  "allPosts": *[_type == "post"] | order(date desc, _updatedAt desc) {
-    content,
-    ${postFields}
-  }
+export const featuredPostsQuery = groq`
+*[_type == "post"] | order(_updatedAt desc) [0..2] {
+  ${postFields}
 }`
 
 export const postSlugsQuery = groq`
