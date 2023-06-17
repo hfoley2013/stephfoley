@@ -6,7 +6,10 @@ import { NextResponse } from "next/server"
 export async function GET() {
   const posts: Post[] = await client.fetch(
     allPosts, { 
-    next: { revalidate: 60 } 
+    next: { 
+      revalidate: 60,
+      tags: ['posts'],
+     } 
   }
   )
   
