@@ -14,6 +14,19 @@ export const metadata = {
   description: 'Stephiney Foley is a Technical Product Manager helping entrepreneurs build their business online.',
   image: '/steph_headshot.png',
   themeColor: '#ffffff',
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: false,
+      noimageindex: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     title: 'Steph Foley | Leader in Tech',
     description: 'Stephiney Foley is a Technical Product Manager helping entrepreneurs build their business online.',
