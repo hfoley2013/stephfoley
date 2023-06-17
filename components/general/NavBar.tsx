@@ -12,10 +12,10 @@ function NavBar({ }: Props) {
 
 
   return (
-    <header className="sticky inset-x-0 top-0 z-50 flex flex-wrap w-full py-4 text-sm bg-gray-100 sm:justify-start sm:flex-nowrap dark:bg-gray-800">
+    <header className="sticky inset-x-0 top-0 z-50 flex flex-wrap w-full py-4 text-sm bg-darkRouge sm:justify-start sm:flex-nowrap dark:bg-darkRouge">
       <nav className="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between" aria-label="Global">
         <div className="flex items-center justify-between">
-          <Link className="inline-flex items-center text-xl font-semibold gap-x-2 dark:text-white" onClick={toggleSideBar} href="/">
+          <Link className="inline-flex items-center text-xl font-semibold gap-x-2 dark:text-lightTan" onClick={toggleSideBar} href="/">
             <div className="relative w-10 h-auto">
               <Image src="/logo_negative.png" alt="Chinese calligraphy of Xie, Thank You." width={80} height={80} className="rounded-md"/>
             </div>
@@ -33,10 +33,10 @@ function NavBar({ }: Props) {
         </div>
         <div id="navbar-image-and-text-1" className={`overflow-hidden transition-all duration-300 hs-collapse basis-full grow sm:block ${isSideBarOpen ? 'block' : 'hidden'}`}>
           <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:pl-5">
-            <Link className="font-medium text-blue-500" onClick={toggleSideBar} href="/" aria-current="page" >Home</Link>
-            <Link className="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500" onClick={toggleSideBar} href="/blog">Blog</Link>
-             <Link className="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500" onClick={toggleSideBar} href="/about">About</Link>
-             <Link className="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500" onClick={toggleSideBar} href="/contact">Contact</Link>
+            <Link className="font-medium text-darkFont hover:text-lightTan" onClick={toggleSideBar} href="/" aria-current="page" >Home</Link>
+            <Link className="font-medium text-darkFont hover:text-lightTan dark:text-lightTan dark:hover:text-gray-500" onClick={toggleSideBar} href="/blog">Blog</Link>
+             <Link className="font-medium text-darkFont hover:text-lightTan dark:text-lightTan dark:hover:text-gray-500" onClick={toggleSideBar} href="/about">About</Link>
+             <Link className="font-medium text-darkFont hover:text-lightTan dark:text-lightTan dark:hover:text-gray-500" onClick={toggleSideBar} href="/contact">Contact</Link>
           </div>
         </div>
       </nav>
