@@ -28,7 +28,7 @@ export const FeaturedPost = ({featuredPost}: Props) => {
     </div>
 
     <div className="mt-7">
-      <h3 className="text-xl font-semibold text-darkFont-800 group-hover:text-gray-600 dark:text-gray-200">
+      <h3 className="text-xl font-semibold text-darkFont group-hover:text-gray-600 dark:text-gray-200">
         {featuredPost.title}
       </h3>
       <p className="mt-3 text-bodyFont dark:text-gray-200">

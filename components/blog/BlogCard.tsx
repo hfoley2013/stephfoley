@@ -8,7 +8,7 @@ type Props = {
   post?: Post
 }
 
-function BlogCard({post}: Props) {
+export default function BlogCard({post}: Props) {
   return (
     <Link className="overflow-hidden group rounded-xl" href={`${process.env.NEXT_PUBLIC_BASE_URL}/blog/${post?.slug}`}>
     <div className="sm:flex">
@@ -39,5 +39,3 @@ function BlogCard({post}: Props) {
   </Link>
   )
 }
-
-export default BlogCard

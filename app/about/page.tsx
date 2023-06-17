@@ -1,13 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
 
-type Props = {}
-
 export const metadata = {
   title: "About"
 }
 
-export default function About({ }: Props) {
+export default function About() {
 
 
   return (

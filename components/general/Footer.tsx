@@ -12,7 +12,7 @@ function Footer({ }: Props) {
         <div className="grid items-center grid-cols-1 gap-5 text-center md:flex md:justify-between">
           <div className="mx-auto sm:mx-0">
             <Link className="flex-none text-xl font-semibold text-black center dark:text-white" href="/" aria-label="Brand">
-              <Image src="/logo_negative.png" alt="Chinese calligraphy of Xie, Thank You." width={40} height={40} className="rounded-md"/>
+              <Image src="/logo.png" alt="Chinese calligraphy of Xie, Thank You." width={40} height={40} className="rounded-md"/>
             </Link>
           </div>
 
