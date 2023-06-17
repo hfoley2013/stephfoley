@@ -21,6 +21,8 @@ type Props = {
   }
 }
 
+export const revalidate = 60
+
 export async function generateStaticParams() {
   const slugs = await fetchSlugs()
   const slugRoutes = slugs.map((slug) => slug.slug.current)

@@ -2,6 +2,7 @@ import React from 'react'
 import { FeaturedPost } from './FeaturedPost'
 import fetchFeaturedPosts from '@/utils/fetchFeaturedPosts'
 
+export const revalidate = 60
 
 export default async function FeaturedPosts() {
   const featuredPosts = await fetchFeaturedPosts()
