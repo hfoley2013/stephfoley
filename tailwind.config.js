@@ -8,6 +8,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        darkTan: '#e4dcd0',
+        lightTan: '#f1ede8',
+        darkRouge: '#c6a28f',
+        lightRouge: '#dbc7ba',
+        darkFont: '#382E28',
+        customBlue: '#4086C7',
+        bodyFont: '#6B5F58',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

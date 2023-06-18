@@ -62,11 +62,11 @@ export default function ContactForm({}: Props) {
 
 
     <div className="grid mt-4">
-      <button type="submit" className="inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-center text-white transition bg-blue-600 border border-transparent rounded-md gap-x-3 hover:bg-blue-700 lg:text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800">Send inquiry</button>
+      <button type="submit" className="inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-center text-white transition border border-transparent rounded-md bg-customBlue gap-x-3 hover:bg-blue-700 lg:text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800">Send inquiry</button>
     </div>
 
     <div className="mt-3 text-center">
-      <p className="text-sm text-gray-500">
+      <p className="text-sm text-darkFont">
         I&apos;ll get back to you in 1-2 business days.
       </p>
     </div>

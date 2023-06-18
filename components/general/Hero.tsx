@@ -2,17 +2,15 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-type Props = {}
-
-function Hero({ }: Props) {
+export default function Hero() {
   return (
     <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
 
       <div className="grid gap-4 md:grid-cols-2 md:gap-8 xl:gap-20 md:items-center">
         <div>
-          <h1 className="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">Hello there! I&apos;m <span className="text-blue-600">Stephiney</span></h1>
-          <p className="mt-3 text-lg text-gray-800 sm:hidden dark:text-gray-400">Come join me on your tech adventure!</p>
-          <p className="hidden mt-3 text-lg text-gray-800 sm:flex dark:text-gray-400">And if you found your way to my little slice of the internet, you&apos;re probably a business owner or entrepreneur (or flirting with the idea of becoming one.).</p>
+          <h1 className="block text-3xl font-bold text-darkFont sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">Hello there! I&apos;m <span className="text-customBlue">Stephiney</span></h1>
+          <p className="mt-3 text-lg text-darkFont sm:hidden dark:text-gray-400">Come join me on your tech adventure!</p>
+          <p className="hidden mt-3 text-lg text-bodyFont sm:flex dark:text-gray-400">And if you found your way to my little slice of the internet, you&apos;re probably a business owner or entrepreneur (or flirting with the idea of becoming one.).</p>
 
 
           <div className="relative mt-3 sm:hidden">
@@ -20,7 +18,7 @@ function Hero({ }: Props) {
           </div>
 
           <div className="grid w-full gap-3 mt-3 sm:inline-flex">
-            <Link className="inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-center text-white transition bg-blue-600 border border-transparent rounded-md gap-x-3 hover:bg-blue-700 lg:text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800" href="/blog">
+            <Link className="inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-center transition border border-transparent rounded-md text-lightTan bg-customBlue gap-x-3 hover:bg-blue-700 lg:text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800" href="/blog">
               Read My Blog!
               <svg className="w-2.5 h-2.5" width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -43,5 +41,3 @@ function Hero({ }: Props) {
     </div>
   )
 }
-
-export default Hero

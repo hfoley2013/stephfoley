@@ -2,9 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 
 
-type Props = {}
-
-function NewsLetterSignUp({ }: Props) {
+export default function NewsLetterSignUp() {
 
 
   return (
@@ -20,7 +18,7 @@ function NewsLetterSignUp({ }: Props) {
               <label htmlFor="hero-input" className="sr-only">Search</label>
               <input type="text" id="hero-input" name="hero-input" className="block w-full px-4 py-3 border-gray-200 rounded-md shadow-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Enter your email" />
             </div>
-            <Link className="inline-flex items-center justify-center w-full px-4 py-3 font-medium text-center text-white transition bg-blue-600 border border-transparent rounded-md sm:w-auto whitespace-nowrap gap-x-3 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800" href="#">
+            <Link className="inline-flex items-center justify-center w-full px-4 py-3 font-medium text-center transition border border-transparent rounded-md text-lightTan bg-customBlue sm:w-auto whitespace-nowrap gap-x-3 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800" href="#">
               Subscribe
             </Link>
           </div>
@@ -30,5 +28,3 @@ function NewsLetterSignUp({ }: Props) {
 
   )
 }
-
-export default NewsLetterSignUp
