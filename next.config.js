@@ -4,7 +4,10 @@ const nextConfig = {
     domains: [
       'cdn.sanity.io',
       'stephfoley.com',
-      'localhost',
+    ],
+    remotePatterns: [
+      { hostname: 'cdn.sanity.io' },
+      { hostname: 'source.unsplash.com' },
     ],
   }
 }
