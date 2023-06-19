@@ -1,6 +1,7 @@
 import React from 'react'
 import BlogCard from '@/components/blog/BlogCard'
 import { fetchPosts } from '@/utils/fetchPosts'
+import { Post } from '@/sanity/interfaces/Post'
 
 export const metadata = {
   title: "Blog"

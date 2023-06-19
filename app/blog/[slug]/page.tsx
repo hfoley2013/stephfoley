@@ -6,6 +6,8 @@ import Link from 'next/link'
 import React from 'react'
 import fetchPost from '@/utils/fetchPost'
 import { urlForImage } from '@/sanity/lib/image'
+import fetchSlugs from '@/utils/fetchSlugs'
+import { Post } from '@/sanity/interfaces/Post'
 
 // Image metadata
 const size = {
@@ -14,11 +16,22 @@ const size = {
 }
 
 type Props = {
-  params: { post: string }
+  params: {
+    slug: string
+  }
+}
+
+export async function generateStaticParams() {
+  const slugs = await fetchSlugs()
+  const slugRoutes = slugs.map((slug) => slug.slug.current)
+  
+  return slugRoutes.map((slug) => ({
+    slug,
+  }))
 }
 
 export async function generateMetadata({ params }: Props) {
-  const slug = params.post
+  const slug = params.slug
   const post = await fetchPost(slug)
 
   try {
@@ -47,12 +60,12 @@ export async function generateMetadata({ params }: Props) {
             alt: post.title,
           }
         ],
-        url: `https://wwww.stephfoley.com/blog/${post.slug}`,
+        url: `https://wwww.stephfoley.com/blog/${slug}`,
       },
       openGraph: {
         title: post.title,
         description: post.excerpt,
-        url: `https://wwww.stephfoley.com/blog/${post.slug}`,
+        url: `https://wwww.stephfoley.com/blog/${slug}`,
         images: [
           {
             url: urlForImage(post.coverImage!).url(),
@@ -74,7 +87,7 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function Post({ params }: Props) {
-  const slug = params.post
+  const slug = params.slug
   const post = await fetchPost(slug)
 
   const components: PortableTextComponents = {

@@ -32,3 +32,9 @@ export const postBySlugQuery = groq`
   ${postFields}
 }
 `
+
+export const getSlugs = groq`
+*[_type == "post"] {
+  slug
+}
+`
