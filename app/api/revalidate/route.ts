@@ -1,25 +1,24 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { headers } from 'next/dist/client/components/headers'
-import { revalidateTag } from 'next/cache'
-import {isValidSignature} from '@sanity/webhook'
+import { isValidSignature, SIGNATURE_HEADER_NAME } from '@sanity/webhook'
+import { revalidatePath } from 'next/cache'
 
 const secret = process.env.SANITY_REVALIDATE_SECRET!
- 
+
 export async function POST(req: NextRequest) {
-  const authorization = headers().get('authorization') || ''
+  const signature = req.headers.get(SIGNATURE_HEADER_NAME) || ''
   const body = await req.json()
-  const tag = req.nextUrl.searchParams.get('posts')
+  console.log('webhook data:', body)
 
   // Validate signature
-  if (!isValidSignature(body, authorization, secret)) {
+  if (!isValidSignature(body, signature, secret)) {
     return NextResponse.json({
       success: false,
       message: 'Unauthorized',
     })
   }
 
-  // Revalidate tag
-  revalidateTag(tag!)
+  // Revalidate all pages
+  await revalidatePath('/**/*')
 
   return NextResponse.json({
     revalidated: true,
