@@ -26,7 +26,7 @@ export const revalidate = 60
 export async function generateStaticParams() {
   const slugs = await fetchSlugs()
   const slugRoutes = slugs.map((slug) => slug.slug.current)
-  
+
   return slugRoutes.map((slug) => ({
     slug,
   }))
@@ -126,7 +126,14 @@ export default async function Post({ params }: Props) {
         )
       },
     },
+    list: {
+      // Ex. 1: customizing common list types
+      bullet: ({ children }) => <ul className="list-disc list-outside space-y-5 pl-5 text-lg text-gray-800 dark:text-gray-200">{children}</ul>,
+      number: ({ children }) => <ol className="list-outside space-y-5 pl-5 text-lg text-gray-800 dark:text-gray-200">{children}</ol>,
+      checkmarks: ({ children }) => <ol className="m-auto text-lg">{children}</ol>,
+    },
   }
+
 
   return (
     <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto bg-lightRouge">
